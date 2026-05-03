@@ -26,6 +26,7 @@
          class="df-logo-img"\
          draggable="false"\
     />\
+    <span class="df-logo-text">Dualform</span>\
   </a>\
 \
   <nav aria-label="Menú principal">\
