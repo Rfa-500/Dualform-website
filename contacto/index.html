@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Cotización | Dualform</title>
+  <meta name="description" content="Envíanos tu idea, plano o archivo 3D. Te ayudamos a definir el proceso, material y método de producción más adecuado.">
+  <link rel="stylesheet" href="../dualform-header.css">
+  <link rel="stylesheet" href="../dualform-overrides.css">
+  <link rel="stylesheet" href="../dualform-pages.css">
+  <style>
+    .df-contact-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media(max-width:860px){ .df-contact-wrap{ grid-template-columns:1fr; } }
+
+    .df-form-success {
+      display:none;
+      background:#f0faf4;
+      border:1.5px solid #2ecc71;
+      border-radius:12px;
+      padding:28px;
+      text-align:center;
+      color:#1a5c35;
+    }
+    .df-form-success svg { width:40px;height:40px;stroke:#2ecc71;fill:none;stroke-width:1.5;margin-bottom:12px; }
+
+    .df-info-box {
+      background:#f8f8f8;
+      border-radius:16px;
+      padding:32px;
+    }
+    .df-info-box h3 { margin-bottom:20px; font-size:1.1rem; }
+    .df-can-send-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:8px;
+    }
+    @media(max-width:500px){ .df-can-send-grid{ grid-template-columns:1fr; } }
+    .df-send-item {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:0.88rem;
+      color:#333;
+      background:#fff;
+      border:1px solid #ebebeb;
+      border-radius:10px;
+      padding:12px 14px;
+    }
+    .df-send-item svg {
+      width:20px;height:20px;
+      stroke:#E8521A;fill:none;
+      stroke-width:1.5;stroke-linecap:round;
+      flex-shrink:0;
+    }
+    .df-contact-detail {
+      display:flex;align-items:center;gap:12px;
+      margin-top:20px;padding-top:20px;
+      border-top:1px solid #e8e8e8;
+      font-size:0.9rem;color:#555;
+    }
+    .df-contact-detail .icon {
+      width:38px;height:38px;
+      background:rgba(232,82,26,0.1);
+      border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;
+    }
+    .df-contact-detail .icon svg { width:18px;height:18px;stroke:#E8521A;fill:none;stroke-width:1.5; }
+  </style>
+</head>
+<body>
+<script src="../dualform-header.js" defer></script>
+<script src="../dualform-page-common.js" defer></script>
+
+<section class="df-hero">
+  <div class="df-container">
+    <div class="df-hero-inner">
+      <span class="df-eyebrow">Cotización sin costo</span>
+      <h1>Solicita una cotización</h1>
+      <p>Envíanos tu idea, plano, archivo 3D o descripción de la pieza. Te ayudamos a definir el mejor proceso, material y método de producción para tu proyecto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="df-section">
+  <div class="df-container">
+    <div class="df-contact-wrap">
+
+      <!-- FORM -->
+      <div>
+        <h2 style="margin-bottom:8px;">Tu información</h2>
+        <p style="margin-bottom:32px;color:#777;font-size:0.95rem;">Todos los campos son necesarios para prepararte una cotización precisa.</p>
+
+        <div id="form-success" class="df-form-success">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <h3 style="margin-bottom:8px;">¡Solicitud enviada!</h3>
+          <p style="color:#2a7a4f;">Recibimos tu información. Te contactaremos en menos de 24 horas hábiles.</p>
+        </div>
+
+        <form class="df-form" id="cotizacion-form" novalidate>
+
+          <div class="df-form-row">
+            <div class="df-field">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="df-field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+            </div>
+          </div>
+
+          <div class="df-form-row">
+            <div class="df-field">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+            </div>
+            <div class="df-field">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+52 (55) 0000-0000">
+            </div>
+          </div>
+
+          <div class="df-field">
+            <label for="servicio">Tipo de servicio requerido</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Selecciona un servicio...</option>
+              <option>Impresión 3D FDM</option>
+              <option>Diseño y modelado 3D</option>
+              <option>Prototipado rápido</option>
+              <option>Fabricación de piezas funcionales</option>
+              <option>Inyección de plástico — bajo volumen</option>
+              <option>Inyección de plástico — alto volumen</option>
+              <option>Selección de materiales</option>
+              <option>Asesoría técnica</option>
+              <option>No estoy seguro / necesito orientación</option>
+            </select>
+          </div>
+
+          <div class="df-field">
+            <label for="mensaje">Descripción del proyecto</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe la pieza, material deseado, cantidad aproximada, dimensiones y cualquier requerimiento especial..." required></textarea>
+          </div>
+
+          <button type="submit" class="df-btn df-btn-primary" style="align-self:flex-start;font-size:0.95rem;padding:15px 32px;">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar solicitud
+          </button>
+
+        </form>
+      </div>
+
+      <!-- INFO LATERAL -->
+      <div class="df-info-box">
+        <h3>¿Qué puedes enviarnos?</h3>
+        <div class="df-can-send-grid">
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Archivo STL, STEP o CAD
+          </div>
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Foto de la pieza
+          </div>
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Plano técnico
+          </div>
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Medidas aproximadas
+          </div>
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Cantidad requerida
+          </div>
+          <div class="df-send-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            Material deseado
+          </div>
+        </div>
+
+        <div class="df-contact-detail">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.46-.46a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg></div>
+          <div><strong style="display:block;color:#1a1a1a;">Respuesta en &lt; 24 h</strong>Te contactamos con cotización y recomendación técnica.</div>
+        </div>
+
+        <div class="df-contact-detail">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><strong style="display:block;color:#1a1a1a;">contacto@dualform.mx</strong>También puedes escribirnos directamente.</div>
+        </div>
+
+        <div class="df-contact-detail">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong style="display:block;color:#1a1a1a;">Ciudad de México, México</strong>Atendemos proyectos de toda la república.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="df-footer"></footer>
+
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('cotizacion-form');
+    var success = document.getElementById('form-success');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Basic validation
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function(el) {
+        if (!el.value.trim()) { el.style.borderColor = '#e74c3c'; ok = false; }
+        else el.style.borderColor = '';
+      });
+      if (!ok) return;
+      // Simulate send
+      form.style.opacity = '0.4';
+      form.style.pointerEvents = 'none';
+      setTimeout(function() {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }, 800);
+    });
+  });
+})();
+</script>
+</body>
+</html>
