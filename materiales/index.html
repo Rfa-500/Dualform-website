@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materiales para Impresión 3D e Inyección | Dualform</title>
+  <meta name="description" content="Catálogo completo de materiales para impresión 3D FDM e inyección plástica. PLA, PETG, ABS, TPU, Nylon, PC y más.">
+  <link rel="stylesheet" href="../dualform-header.css">
+  <link rel="stylesheet" href="../dualform-overrides.css">
+  <link rel="stylesheet" href="../dualform-pages.css">
+</head>
+<body>
+<script src="../dualform-header.js" defer></script>
+<script src="../dualform-page-common.js" defer></script>
+
+<section class="df-hero">
+  <div class="df-container">
+    <div class="df-hero-inner">
+      <span class="df-eyebrow">Catálogo de materiales</span>
+      <h1>Materiales para impresión 3D e inyección plástica</h1>
+      <p>Selecciona el material ideal según las propiedades mecánicas, térmicas y químicas que tu pieza necesita. Te asesoramos en cada proyecto.</p>
+      <div class="df-hero-buttons">
+        <a href="../contacto/index.html" class="df-btn df-btn-primary">Consultar material</a>
+        <a href="../servicios/index.html" class="df-btn df-btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOQUE 1: IMPRESIÓN 3D -->
+<section class="df-section">
+  <div class="df-container">
+    <div class="df-section-header">
+      <span class="df-eyebrow">Bloque 1</span>
+      <h2>Materiales para <span>impresión 3D</span></h2>
+      <p>Filamentos y resinas para fabricación aditiva FDM. Cada material tiene propiedades únicas para cada tipo de aplicación.</p>
+    </div>
+    <div class="df-chip-bar" id="m3d-chips"></div>
+    <div class="df-mat-panel" id="m3d-panel"></div>
+  </div>
+</section>
+
+<!-- BLOQUE 2: INYECCIÓN -->
+<section class="df-chip-section">
+  <div class="df-container">
+    <div class="df-section-header">
+      <span class="df-eyebrow">Bloque 2</span>
+      <h2>Materiales para <span>inyección plástica</span></h2>
+      <p>Termoplásticos para procesos de moldeo por inyección en bajo y alto volumen de producción.</p>
+    </div>
+    <div class="df-chip-bar" id="inj-chips"></div>
+    <div class="df-mat-panel" id="inj-panel"></div>
+  </div>
+</section>
+
+<div class="df-cta-banner">
+  <div class="df-container">
+    <h2>¿No sabes qué material usar?</h2>
+    <p>Cuéntanos tu aplicación y te recomendamos el material y proceso más adecuado para tu pieza.</p>
+    <a href="../contacto/index.html" class="df-btn df-btn-primary">Solicitar asesoría</a>
+  </div>
+</div>
+
+<footer id="df-footer"></footer>
+
+<script>
+window.dfPageInit = function() {
+  var mat3d = {
+    'PLA':{ tag:'Biodegradable · Rígido', title:'PLA — Ácido Poliláctico', desc:'Material de entrada ideal para prototipos de forma, maquetas y piezas de baja carga mecánica. Fácil de imprimir y muy buen detalle.', adv:['Bajo costo','Fácil de imprimir','Buena definición de detalles','Biodegradable'], uses:['Prototipos de forma y ajuste','Maquetas de presentación','Modelos educativos','Piezas decorativas'] },
+    'PETG':{ tag:'Semi-rígido · Resistente', title:'PETG — Tereftalato de Polietileno', desc:'Excelente balance entre rigidez y tenacidad. Resistente a la humedad, ligero translúcido y muy adecuado para piezas funcionales.', adv:['Resistente a impacto','Bajo absorción de humedad','Ligero y translúcido','Buena adhesión entre capas'], uses:['Contenedores y tapas','Protectores de piezas','Piezas de uso final ligero','Contacto alimentario (grado)'] },
+    'ABS':{ tag:'Rígido · Alta temperatura', title:'ABS — Acrilonitrilo Butadieno Estireno', desc:'Material técnico con alta resistencia al impacto y buenas propiedades mecánicas. Mecanizable y compatible con acabados superficiales.', adv:['Alta resistencia al impacto','Mecanizable y lijable','Compatible con acetona','Buenas propiedades mecánicas'], uses:['Carcasas técnicas','Piezas mecanizadas','Prototipos funcionales de alta resistencia','Piezas automotrices'] },
+    'TPU':{ tag:'Flexible · Elástico', title:'TPU — Poliuretano Termoplástico', desc:'Material flexible ideal para juntas, sellos, protectores de impacto y piezas que requieren elasticidad sin perder resistencia.', adv:['Flexible y elástico','Alta resistencia al desgaste','Resistente a aceites y químicos','Dureza configurable'], uses:['Juntas y sellos','Mangos ergonómicos','Protectores de golpes','Piezas con ajuste a presión'] },
+    'Nylon / PA':{ tag:'Alta resistencia · Técnico', title:'Nylon / Poliamida (PA)', desc:'Material técnico con excelente resistencia mecánica, tenacidad y resistencia química. Muy adecuado para piezas industriales de uso final.', adv:['Alta resistencia mecánica','Resistente a la abrasión','Bajo coeficiente de fricción','Tenaz y duradero'], uses:['Engranajes y poleas','Bujes y rodamientos','Piezas estructurales ligeras','Componentes de maquinaria'] },
+    'Resinas técnicas':{ tag:'Alta precisión · SLA/DLP', title:'Resinas técnicas para impresión', desc:'Materiales de alta resolución para piezas con detalle fino, superficies muy suaves y propiedades mecánicas definidas por formulación.', adv:['Resolución de detalles finos','Superficies suaves','Formulaciones especializadas','Alta isotrópica'], uses:['Prototipos de alta fidelidad','Detalle fino y joyería','Odontología y medicina','Óptica y piezas transparentes'] },
+  };
+
+  var matInj = {
+    'ABS':{ tag:'Rígido', title:'ABS para inyección', desc:'Termoplástico de ingeniería muy utilizado por su facilidad de procesado, buen acabado superficial y resistencia al impacto.', adv:['Fácil de procesar','Buen acabado superficial','Alta resistencia al impacto','Mecanizable post-proceso'], uses:['Carcasas electrónicas','Piezas automotrices de interior','Electrodomésticos','Componentes técnicos'] },
+    'PP':{ tag:'Semi-rígido', title:'PP — Polipropileno', desc:'Plástico versátil con excelente resistencia química, bajo peso y buena fatiga a la flexión. Ideal para bisagras vivas y tapas.', adv:['Resistencia química excelente','Bajo peso','Buena fatiga a flexión','Bajo costo'], uses:['Tapas y contenedores','Piezas médicas desechables','Empaque industrial','Bisagras vivas'] },
+    'PE':{ tag:'Flexible · Económico', title:'PE — Polietileno', desc:'Uno de los plásticos más utilizados globalmente. Alta resistencia química, bajo coeficiente de fricción y alta resistencia al impacto.', adv:['Alta resistencia química','Bajo coeficiente de fricción','Bajo costo','Alta disponibilidad'], uses:['Contenedores y botellas','Piezas de empaque','Contacto con fluidos','Aplicaciones de bajo costo'] },
+    'Nylon':{ tag:'Alta resistencia', title:'Nylon / PA para inyección', desc:'Material técnico con alta resistencia a la abrasión, buen coeficiente de deslizamiento y propiedades mecánicas superiores.', adv:['Alta resistencia a abrasión','Bajo coeficiente de deslizamiento','Resistencia mecánica superior','Alta tenacidad'], uses:['Engranajes y poleas','Piezas de maquinaria','Conectores y soportes','Piezas de transmisión'] },
+    'PC':{ tag:'Transparente · Alta temperatura', title:'PC — Policarbonato', desc:'Altísimo impacto, transparencia óptica y resistencia térmica. Utilizado en aplicaciones exigentes de seguridad e iluminación.', adv:['Altísimo impacto','Transparencia óptica','Resistencia a alta temperatura','Estabilidad dimensional'], uses:['Visores y protectores','Lentes y óptica','Carcasas de equipos','Cubiertas de iluminación'] },
+    'POM':{ tag:'Alta precisión', title:'POM — Acetal', desc:'Material de alta rigidez y muy baja fricción. Excelente estabilidad dimensional y resistencia a solventes y combustibles.', adv:['Alta rigidez','Muy baja fricción','Excelente estabilidad dimensional','Resistencia a solventes'], uses:['Engranajes de precisión','Rodamientos y bujes','Válvulas y conectores','Piezas de mecanismo fino'] },
+    'TPU':{ tag:'Flexible · Elástico', title:'TPU para inyección', desc:'Flexible, resistente al desgaste y a los aceites. Permite fabricar piezas con dureza controlada y elasticidad superior.', adv:['Flexible y elástico','Resistencia al desgaste','Resistencia a aceites','Dureza controlable'], uses:['Sellos y juntas','Suelas y agarre','Mangos blandos','Piezas amortiguadoras'] },
+    'Materiales técnicos':{ tag:'Alta performance', title:'Materiales técnicos especiales', desc:'PPS, PEEK, LCP y otros polímeros de alta performance para aplicaciones industriales críticas.', adv:['Alta resistencia térmica','Propiedades mecánicas extremas','Resistencia química agresiva','Uso en aplicaciones críticas'], uses:['Piezas aeroespaciales','Componentes médicos','Alta temperatura','Resistencia química extrema'] },
+  };
+
+  if (window.dfChips) {
+    window.dfChips('m3d-chips', 'm3d-panel', mat3d);
+    window.dfChips('inj-chips', 'inj-panel', matInj);
+  }
+};
+</script>
+</body>
+</html>

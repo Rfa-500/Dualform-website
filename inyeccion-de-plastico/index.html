@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inyección de Plástico | Dualform</title>
+  <meta name="description" content="Piezas plásticas por moldeo e inyección, bajo y alto volumen.">
+  <link rel="stylesheet" href="../dualform-header.css">
+  <link rel="stylesheet" href="../dualform-overrides.css">
+  <link rel="stylesheet" href="../dualform-pages.css">
+</head>
+<body>
+<script src="../dualform-header.js" defer></script>
+
+<section class="df-hero">
+  <div class="df-container">
+    <div class="df-hero-inner">
+      <span class="df-eyebrow">Moldeo e inyección</span>
+      <h1>Inyección de plástico para bajo y alto volumen</h1>
+      <p>Soluciones para fabricar piezas plásticas mediante procesos de moldeo, desde lotes iniciales hasta producción repetitiva con acabados superiores.</p>
+      <div class="df-hero-buttons">
+        <a href="../contacto/index.html" class="df-btn df-btn-primary">Solicitar cotización</a>
+        <a href="../aplicaciones/index.html" class="df-btn df-btn-ghost">Ver aplicaciones</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="df-section">
+  <div class="df-container">
+    <div class="df-section-header">
+      <span class="df-eyebrow">Procesos</span>
+      <h2>Nuestros procesos de <span>inyección</span></h2>
+    </div>
+    <div class="df-two-col" style="margin-bottom:64px;">
+      <div class="df-two-col-content">
+        <h3>Alto volumen</h3>
+        <h2>Inyección de alto volumen</h2>
+        <p>Producción con moldes robustos de acero endurecido, ideal para cantidades repetitivas y alta consistencia dimensional en cada ciclo.</p>
+        <ul class="df-mat-list" style="margin-bottom:28px;">
+          <li>Alta repetibilidad y precisión dimensional</li>
+          <li>Moldes de larga vida útil</li>
+          <li>Ciclos cortos para producción eficiente</li>
+          <li>Compatible con amplia gama de materiales</li>
+        </ul>
+        <a href="../contacto/index.html" class="df-btn df-btn-primary">Consultar proceso</a>
+      </div>
+      <div>
+        <div class="df-placeholder" style="min-height:340px;">
+          <div class="df-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <span class="df-placeholder-label">Espacio para imagen de molde de acero endurecido</span>
+        </div>
+      </div>
+    </div>
+    <div class="df-two-col reverse">
+      <div class="df-two-col-content">
+        <h3>Bajo volumen</h3>
+        <h2>Inyección de bajo volumen</h2>
+        <p>Lotes pequeños o medianos para validación de diseño o producción inicial. Moldes de aluminio para reducir costos de entrada.</p>
+        <ul class="df-mat-list" style="margin-bottom:28px;">
+          <li>Menor inversión en herramental</li>
+          <li>Ideal para series de 100 a 5,000 piezas</li>
+          <li>Tiempos de entrega más rápidos</li>
+          <li>Validación antes de molde definitivo</li>
+        </ul>
+        <a href="../contacto/index.html" class="df-btn df-btn-primary">Consultar proceso</a>
+      </div>
+      <div>
+        <div class="df-placeholder" style="min-height:340px;">
+          <div class="df-placeholder-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <span class="df-placeholder-label">Espacio para imagen de molde de aluminio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="df-chip-section">
+  <div class="df-container">
+    <div class="df-section-header">
+      <span class="df-eyebrow">Materiales</span>
+      <h2>Materiales para <span>inyección plástica</span></h2>
+    </div>
+    <div class="df-chip-bar" id="inj-chips"></div>
+    <div class="df-mat-panel" id="inj-panel"></div>
+  </div>
+</section>
+
+<div class="df-cta-banner">
+  <div class="df-container">
+    <h2>¿Necesitas una cotización?</h2>
+    <p>Comparte tu diseño y te ayudamos a definir el molde y proceso óptimo.</p>
+    <a href="../contacto/index.html" class="df-btn df-btn-primary">Solicitar cotización</a>
+  </div>
+</div>
+
+<footer id="df-footer"></footer>
+<script src="../dualform-page-common.js" defer></script>
+<script>
+window.dfPageInit = function() {
+  var mats = {
+    'ABS':{ tag:'Rígido', title:'ABS', desc:'Buena resistencia al impacto, fácil de procesar, excelente acabado.', uses:['Carcasas electrónicas','Piezas automotrices','Juguetes','Componentes técnicos'] },
+    'PP':{ tag:'Semi-rígido', title:'Polipropileno (PP)', desc:'Resistencia química, bajo peso y buena fatiga a la flexión.', uses:['Tapas y contenedores','Piezas médicas','Bisagras vivas','Empaque'] },
+    'PE':{ tag:'Flexible', title:'Polietileno (PE)', desc:'Alta resistencia química, bajo costo, ampliamente disponible.', uses:['Contenedores','Empaque','Piezas de bajo costo','Contacto con fluidos'] },
+    'Nylon':{ tag:'Alta resistencia', title:'Nylon / Poliamida', desc:'Alta resistencia a la abrasión y propiedades mecánicas superiores.', uses:['Engranajes','Piezas de maquinaria','Conectores','Transmisiones'] },
+    'PC':{ tag:'Transparente', title:'Policarbonato (PC)', desc:'Altísimo impacto, transparencia óptica y resistencia térmica.', uses:['Visores','Lentes','Carcasas','Cubiertas de iluminación'] },
+    'POM':{ tag:'Alta precisión', title:'POM / Acetal', desc:'Alta rigidez, baja fricción y excelente estabilidad dimensional.', uses:['Engranajes de precisión','Rodamientos','Válvulas','Mecanismos'] },
+    'TPU':{ tag:'Flexible', title:'TPU — Poliuretano Termoplástico', desc:'Flexible, resistente al desgaste y aceites. Dureza controlada.', uses:['Sellos','Suelas','Mangos blandos','Amortiguadores'] },
+    'Materiales técnicos':{ tag:'Alta performance', title:'Materiales técnicos especiales', desc:'PPS, PEEK y otros polímeros de alta performance para aplicaciones críticas.', uses:['Aeroespacial','Médico','Alta temperatura','Resistencia química extrema'] },
+  };
+  var keys = Object.keys(mats), active = keys[0];
+  var bar = document.getElementById('inj-chips');
+  var panel = document.getElementById('inj-panel');
+  if (!bar || !panel) return;
+  bar.innerHTML = keys.map(function(k){ return '<button class="df-chip'+(k===active?' active':'')+'" data-key="'+k+'">'+k+'</button>'; }).join('');
+  bar.querySelectorAll('.df-chip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      active = btn.getAttribute('data-key');
+      bar.querySelectorAll('.df-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active'); render();
+    });
+  });
+  function render(){
+    var d=mats[active]; panel.classList.add('fading');
+    setTimeout(function(){
+      panel.innerHTML='<div class="df-mat-panel-info"><span class="df-mat-tag">'+d.tag+'</span><div class="df-mat-title">'+d.title+'</div><p class="df-mat-desc">'+d.desc+'</p><ul class="df-mat-list">'+d.uses.map(function(u){ return '<li>'+u+'</li>'; }).join('')+'</ul></div><div class="df-placeholder df-placeholder--light" style="min-height:260px;"><div class="df-placeholder-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><span class="df-placeholder-label">Imagen de '+active+'</span></div>';
+      panel.classList.remove('fading');
+    },160);
+  }
+  render();
+};
+</script>
+</body>
+</html>
